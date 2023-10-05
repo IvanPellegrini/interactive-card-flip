@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  font-family: "Dosis", sans-serif;
+}
+
+header {
+  color: #cae0e8;
+  padding-top: 30px;
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 48px;
+  font-family: "Great Vibes", cursive;
+}
+
+h2 {
+  font-size: 20px;
+  font-style: italic;
+}
+
+h3 {
+  font-size: 22px;
+  padding: 10px 10px;
+  color: rgb(0, 127, 136);
+  text-shadow: 1px 1px 1px#0a0a0a;
+}
+p {
+  color: #242424;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 0 10px;
+  line-height: 1.3;
+}
+.container {
+  margin: auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 100px;
+  row-gap: 50px;
+}
+
+.main_card {
+  width: 200px;
+  height: 300px;
+  border-radius: 15px;
+  animation: card-spin 10s linear infinite;
+}
+
+.card_frame {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.main_card:hover .card_frame {
+  transform: rotateY(180deg);
+}
+
+.main_card:hover {
+  animation: none;
+}
+.card_front,
+.card_back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 15px;
+}
+
+.card_front {
+  box-shadow: 0 0 7px 3px rgb(103, 103, 103);
+  border: 3px solid rgb(0, 0, 0);
+}
+
+.card_front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.card_back {
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  background-blend-mode: multiply;
+  background-blend-mode: screen;
+  transform: rotateY(180deg);
+  text-align: center;
+  border: 3px solid rgb(0, 127, 136);
+}
+
+@keyframes card-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1300px) {
+  .container {
+    width: 600px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    width: 200px;
+  }
+}
